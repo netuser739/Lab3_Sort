@@ -1,16 +1,13 @@
-Quick Sort Iteration: 20 15 21 1 36 70 93 28 52 62 88 78 81 28 67 
-Quick Sort Iteration: 1 15 21 20 
-Quick Sort Iteration: 20 21 15 
-Quick Sort Iteration: 15 21 
-Quick Sort Iteration: 28 28 67 52 62 88 78 81 93 70 
-Quick Sort Iteration: 28 28 
-Quick Sort Iteration: 70 62 88 78 81 93 52 
-Quick Sort Iteration: 52 88 78 81 93 62 
-Quick Sort Iteration: 62 78 81 93 88 
-Quick Sort Iteration: 88 81 93 78 
-Quick Sort Iteration: 78 93 81 
-Quick Sort Iteration: 81 93 
-Quick Sort Result: 1 20 15 21 36 28 28 67 70 52 62 88 78 81 93 
-Time taken by Quick Sort: 397 microseconds
-Number of Swaps (Quick Sort): 5
-Number of Comparisons (Quick Sort): 76
+Quick Sort Iteration: 8 1 7 8 5 15 44 80 19 93 38 42 78 45 69 
+Quick Sort Iteration: 1 5 7 8 8 
+Quick Sort Iteration: 7 8 8 
+Quick Sort Iteration: 44 19 38 42 45 69 78 80 93 
+Quick Sort Iteration: 44 19 38 42 45 
+Quick Sort Iteration: 19 38 42 44 
+Quick Sort Iteration: 19 38 
+Quick Sort Iteration: 78 80 93 
+Quick Sort Iteration: 78 80 
+Quick Sort Result: 1 5 7 8 8 15 19 38 42 44 45 69 78 80 93 
+Time taken by Quick Sort: 316 microseconds
+Number of Swaps (Quick Sort): 31
+Number of Comparisons (Quick Sort): 39

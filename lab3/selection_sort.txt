@@ -1,19 +1,19 @@
-Selection Sort Iteration 1: 93 88 15 28 67 70 20 28 52 62 21 78 81 1 36 
-Selection Sort Iteration 2: 93 88 15 28 67 70 20 28 52 62 21 78 81 1 36 
-Selection Sort Iteration 3: 93 88 81 28 67 70 20 28 52 62 21 78 15 1 36 
-Selection Sort Iteration 4: 93 88 81 78 67 70 20 28 52 62 21 28 15 1 36 
-Selection Sort Iteration 5: 93 88 81 78 70 67 20 28 52 62 21 28 15 1 36 
-Selection Sort Iteration 6: 93 88 81 78 70 67 20 28 52 62 21 28 15 1 36 
-Selection Sort Iteration 7: 93 88 81 78 70 67 62 28 52 20 21 28 15 1 36 
-Selection Sort Iteration 8: 93 88 81 78 70 67 62 52 28 20 21 28 15 1 36 
-Selection Sort Iteration 9: 93 88 81 78 70 67 62 52 36 20 21 28 15 1 28 
-Selection Sort Iteration 10: 93 88 81 78 70 67 62 52 36 28 21 20 15 1 28 
-Selection Sort Iteration 11: 93 88 81 78 70 67 62 52 36 28 28 20 15 1 21 
-Selection Sort Iteration 12: 93 88 81 78 70 67 62 52 36 28 28 21 15 1 20 
-Selection Sort Iteration 13: 93 88 81 78 70 67 62 52 36 28 28 21 20 1 15 
-Selection Sort Iteration 14: 93 88 81 78 70 67 62 52 36 28 28 21 20 15 1 
-Selection Sort Iteration 15: 93 88 81 78 70 67 62 52 36 28 28 21 20 15 1 
-Selection Sort Result: 93 88 81 78 70 67 62 52 36 28 28 21 20 15 1 
-Time taken by Selection Sort: 680 microseconds
+Selection Sort Iteration 1: 93 80 38 78 45 8 44 1 19 69 7 42 8 5 15 
+Selection Sort Iteration 2: 93 80 38 78 45 8 44 1 19 69 7 42 8 5 15 
+Selection Sort Iteration 3: 93 80 78 38 45 8 44 1 19 69 7 42 8 5 15 
+Selection Sort Iteration 4: 93 80 78 69 45 8 44 1 19 38 7 42 8 5 15 
+Selection Sort Iteration 5: 93 80 78 69 45 8 44 1 19 38 7 42 8 5 15 
+Selection Sort Iteration 6: 93 80 78 69 45 44 8 1 19 38 7 42 8 5 15 
+Selection Sort Iteration 7: 93 80 78 69 45 44 42 1 19 38 7 8 8 5 15 
+Selection Sort Iteration 8: 93 80 78 69 45 44 42 38 19 1 7 8 8 5 15 
+Selection Sort Iteration 9: 93 80 78 69 45 44 42 38 19 1 7 8 8 5 15 
+Selection Sort Iteration 10: 93 80 78 69 45 44 42 38 19 15 7 8 8 5 1 
+Selection Sort Iteration 11: 93 80 78 69 45 44 42 38 19 15 8 7 8 5 1 
+Selection Sort Iteration 12: 93 80 78 69 45 44 42 38 19 15 8 8 7 5 1 
+Selection Sort Iteration 13: 93 80 78 69 45 44 42 38 19 15 8 8 7 5 1 
+Selection Sort Iteration 14: 93 80 78 69 45 44 42 38 19 15 8 8 7 5 1 
+Selection Sort Iteration 15: 93 80 78 69 45 44 42 38 19 15 8 8 7 5 1 
+Selection Sort Result: 93 80 78 69 45 44 42 38 19 15 8 8 7 5 1 
+Time taken by Selection Sort: 722 microseconds
 Number of Swaps (Selection Sort): 15
 Number of Comparisons (Selection Sort): 105
