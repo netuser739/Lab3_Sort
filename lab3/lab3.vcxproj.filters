@@ -29,5 +29,8 @@
     <Text Include="selection_sort.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="data.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

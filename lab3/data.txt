@@ -1,0 +1,3 @@
+Time taken by Selection Sort: 750 microseconds
+Number of Swaps (Selection Sort): 0
+Number of Comparisons (Selection Sort): 499500
