@@ -17,6 +17,44 @@ void swap(int& a, int& b) {
     b = temp;
 }
 
+void LowToUpArray(int* array, int size, int minValue, int maxValue) {
+    int i = 0;
+    int k = minValue;
+    while (i < size) {
+        array[i] = k;
+        if (k < maxValue) {
+            k++;
+        }
+        else {
+            k = maxValue;
+        }
+        i++;
+    }
+}
+
+// Generating a descending array
+void UpToLowArray(int* array, int size, int minValue, int maxValue) {
+    int i = 0;
+    int k = maxValue;
+    while (i < size) {
+        array[i] = k;
+        if (k > minValue) {
+            k--;
+        }
+        else {
+            k = minValue;
+        }
+        i++;
+    }
+}
+
+// Generating a random array
+void RandomArray(int* array, int size, int minValue, int maxValue) {
+    for (int i = 0; i < size; i++) {
+        array[i] = (double)rand() / RAND_MAX * (maxValue - minValue) + minValue;
+    }
+}
+
 // Сортировка выбором
 int selectionSort(int array[], int n, long int& comp, ofstream& outputFile) {
     int swaps = 0;
@@ -28,8 +66,13 @@ int selectionSort(int array[], int n, long int& comp, ofstream& outputFile) {
                 minIndex = j;
             }
         }
+
         // Обмен текущего элемента с минимальным
-        swap(array[i], array[minIndex]);
+        if (i != minIndex) {
+            swap(array[i], array[minIndex]);
+            swaps += 1;
+        }
+
         // Вывод массива после каждой итерации в файл
         if (n <= 15) {
             outputFile << "Selection Sort Iteration " << i + 1 << ": ";
@@ -38,7 +81,6 @@ int selectionSort(int array[], int n, long int& comp, ofstream& outputFile) {
             }
             outputFile << endl;
         }
-        swaps += 1;
     }
     return swaps;
 }
@@ -46,7 +88,6 @@ int selectionSort(int array[], int n, long int& comp, ofstream& outputFile) {
 // Быстрая сортировка
 int quickSort(int array[], int low, int high, long int &comp, ofstream& outputFile) {
     int swaps = 0;
-    comp++;
     if (low < high) {
         int divider = array[high];
         int i = low - 1;
@@ -54,15 +95,20 @@ int quickSort(int array[], int low, int high, long int &comp, ofstream& outputFi
         // Разделение массива на две части: элементы, меньшие divider, и элементы, большие divider
         for (int j = low; j < high; ++j) {
             comp++;
-            if (array[j] < divider) {
+            if (array[j] <= divider) {
                 ++i;
-                swap(array[i], array[j]);
-                swaps += 1;
+                if (i != j) {
+                    swap(array[i], array[j]);
+                    swaps += 1;
+                }
             }
         }
+
         // Обмен опорного элемента с элементом, стоящим следующим после меньших элементов
-        swap(array[i + 1], array[high]);
-        swaps += 1;
+        if (i + 1 != high) {
+            swap(array[i + 1], array[high]);
+            swaps += 1;
+        }
 
         // Вывод массива после каждой итерации в файл
         if (n <= 15) {
@@ -76,8 +122,8 @@ int quickSort(int array[], int low, int high, long int &comp, ofstream& outputFi
         int partitionIndex = i + 1;
 
         // Рекурсивно сортируем обе части массива
-        quickSort(array, low, partitionIndex - 1, comp, outputFile);
-        quickSort(array, partitionIndex + 1, high, comp, outputFile);
+        swaps += quickSort(array, low, partitionIndex - 1, comp, outputFile);
+        swaps += quickSort(array, partitionIndex + 1, high, comp, outputFile);
     }
     return swaps;
 }
@@ -90,8 +136,8 @@ int main() {
     // Генерация и вывод исходного массива
     ofstream originalFile("original.txt");
     originalFile << "Original Array: ";
+    RandomArray(array, n, 0, 100);
     for (int i = 0; i < n; ++i) {
-        array[i] = rand() % 100;  // Заполняем массив случайными числами от 0 до 99
         originalFile << array[i] << " ";
     }
     cout << endl;
@@ -108,10 +154,10 @@ int main() {
     auto durationSelectionSort = duration_cast<microseconds>(stopSelectionSort - startSelectionSort);
 
     // Вывод отсортированного массива и времени выполнения сортировки выбором
-    selectionFile << "Selection Sort Result: ";
+ /*   selectionFile << "Selection Sort Result: ";
     for (int i = 0; i < n; ++i) {
         selectionFile << arraySelection[i] << " ";
-    }
+    }*/
     selectionFile << endl;
     selectionFile << "Time taken by Selection Sort: " << durationSelectionSort.count() << " microseconds" << endl;
     selectionFile << "Number of Swaps (Selection Sort): " << selectionSwaps << endl;
@@ -129,10 +175,10 @@ int main() {
     auto durationQuickSort = duration_cast<microseconds>(stopQuickSort - startQuickSort);
 
     // Вывод отсортированного массива и времени выполнения быстрой сортировки
-    quickFile << "Quick Sort Result: ";
-    for (int i = 0; i < n; ++i) {
-        quickFile << arrayQuick[i] << " ";
-    }
+    //quickFile << "Quick Sort Result: ";
+    //for (int i = 0; i < n; ++i) {
+    //    quickFile << arrayQuick[i] << " ";
+    //}
     quickFile << endl;
     quickFile << "Time taken by Quick Sort: " << durationQuickSort.count() << " microseconds" << endl;
     quickFile << "Number of Swaps (Quick Sort): " << quickSwaps << endl;
